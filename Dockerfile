@@ -38,8 +38,7 @@ RUN mkdir -p /tmp/protoc && \
 ENV NODE_VER v16.15.0
 
 # install nodejs and grpc tools
-RUN apt-get install xz-utils && cd /usr/local/ && \
-     wget https://npmmirror.com/mirrors/node/$NODE_VER/node-$NODE_VER-linux-x64.tar.xz && \
+RUN apt-get install xz-utils && cd /usr/local/ && wget https://nodejs.org/dist/$NODE_VER/node-$NODE_VER-linux-x64.tar.xz && \
      xz -d node-$NODE_VER-linux-x64.tar.xz && \
      tar xvf node-$NODE_VER-linux-x64.tar && \
      mv node-$NODE_VER-linux-x64 nodejs && \
